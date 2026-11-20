@@ -1,0 +1,300 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #090909;
+    color: #eee0cf;
+}
+
+/* START SCREEN */
+
+.start-screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1920") center/cover;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.72);
+}
+
+.menu-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 750px;
+    padding: 30px;
+}
+
+.subtitle {
+    color: #b8a18a;
+    letter-spacing: 5px;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.menu-content h1 {
+    font-size: clamp(38px, 7vw, 75px);
+    letter-spacing: 5px;
+    color: #e5d6c4;
+    text-shadow: 0 0 20px #8b0000;
+}
+
+.tagline {
+    font-size: 30px;
+    color: #a52a2a;
+    font-style: italic;
+    margin: 10px 0 30px;
+}
+
+.description {
+    color: #d0c7bd;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+#startBtn {
+    padding: 16px 45px;
+    background: transparent;
+    border: 1px solid #a52a2a;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+#startBtn:hover {
+    background: #8b0000;
+}
+
+.footer-text {
+    margin-top: 40px;
+    color: #8c8176;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+
+/* GAME SCREEN */
+
+.game-screen {
+    display: none;
+    min-height: 100vh;
+    background: #0b0908;
+    padding: 15px;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 20px;
+    background: #1b1511;
+    border: 1px solid #59432f;
+    margin-bottom: 15px;
+}
+
+.room-info p {
+    color: #ad8b67;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.room-info h2 {
+    font-size: 21px;
+    letter-spacing: 2px;
+}
+
+.game-stats {
+    display: flex;
+    gap: 35px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat span {
+    font-size: 10px;
+    color: #b59b7d;
+    letter-spacing: 1px;
+}
+
+.stat h2 {
+    margin-top: 7px;
+    color: #e5c49a;
+    font-size: 23px;
+}
+
+
+/* MAIN LAYOUT */
+
+.game-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 270px;
+    gap: 15px;
+    min-height: 600px;
+}
+
+.room-area {
+    min-width: 0;
+}
+
+.room-image {
+    width: 100%;
+    height: calc(100vh - 145px);
+    min-height: 550px;
+    position: relative;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.12)),
+        url("./assets/entrance-hall.png") center/cover no-repeat;
+
+    border: 1px solid #59432f;
+}
+
+.room-title {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    text-shadow: 0 2px 8px black;
+}
+
+.room-title h2 {
+    letter-spacing: 3px;
+}
+
+.room-title p {
+    margin-top: 8px;
+    color: #ddd0c2;
+    font-size: 13px;
+}
+
+
+/* OBJECT PANEL */
+
+.object-panel {
+    background: #1b1511;
+    border: 1px solid #59432f;
+    padding: 20px;
+}
+
+.object-panel h2 {
+    font-size: 19px;
+    letter-spacing: 2px;
+    color: #e0bd91;
+}
+
+.panel-description {
+    color: #b3a08d;
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 12px 0 22px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    color: #dfc9b0;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    height: 6px;
+    background: #39302a;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#progressFill {
+    width: 0%;
+    height: 100%;
+    background: #a34c32;
+    transition: width 0.3s;
+}
+
+.object-list {
+    list-style: none;
+}
+
+.object-list li {
+    padding: 10px 5px;
+    border-bottom: 1px solid #39302a;
+    color: #e0d0bd;
+    font-size: 14px;
+}
+
+.panel-footer {
+    color: #b18b65;
+    font-size: 11px;
+    font-style: italic;
+    margin-top: 25px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width: 800px) {
+
+    .game-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .game-stats {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .game-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .room-image {
+        height: 500px;
+        min-height: 400px;
+    }
+}
+
+
+.hotspot-layer {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.object-hotspot {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 5;
+    width: 7%;
+    height: 9%;
+}
+
+.object-hotspot:focus {
+    outline: none;
+}
+
+.object-list li.found {
+    color: #827767;
+    text-decoration: line-through;
+    opacity: 0.45;
+}

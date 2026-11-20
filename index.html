@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haunted House - The Escape</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- START SCREEN -->
+    <div class="start-screen" id="startScreen">
+        <div class="overlay"></div>
+
+        <div class="menu-content">
+            <p class="subtitle">A TERRIFYING ESCAPE ADVENTURE</p>
+            <h1>HAUNTED HOUSE</h1>
+            <p class="tagline">The Escape</p>
+
+            <p class="description">
+                You are trapped inside an abandoned mansion.
+                Find hidden objects and escape before time runs out.
+            </p>
+
+            <button id="startBtn">START GAME</button>
+            <p class="footer-text">CAN YOU SURVIVE THE NIGHT?</p>
+        </div>
+    </div>
+
+
+    <!-- GAME SCREEN -->
+    <div class="game-screen" id="gameScreen">
+
+        <header class="game-header">
+
+            <div class="room-info">
+                <p>CURRENT LOCATION</p>
+                <h2>THE ENTRANCE HALL</h2>
+            </div>
+
+            <div class="game-stats">
+                <div class="stat">
+                    <span>TIME LEFT</span>
+                    <h2 id="timer">07:00</h2>
+                </div>
+
+                <div class="stat">
+                    <span>SCORE</span>
+                    <h2 id="score">0</h2>
+                </div>
+
+                <div class="stat">
+                    <span>OBJECTS FOUND</span>
+                    <h2 id="foundCount">0/15</h2>
+                </div>
+            </div>
+
+        </header>
+
+        <main class="game-layout">
+
+            <section class="room-area">
+
+                <div class="room-image" id="roomImage">
+
+    <div class="room-title">
+        <h2>ROOM 01</h2>
+        <p>Find the hidden objects to escape</p>
+    </div>
+
+    <div class="hotspot-layer" id="hotspotLayer"></div>
+
+</div>
+
+            </section>
+
+
+            <aside class="object-panel">
+
+                <h2>HIDDEN OBJECTS</h2>
+                <p class="panel-description">
+                    Find at least 15 objects to unlock the next room.
+                </p>
+
+                <div class="progress-info">
+                    <span>Progress</span>
+                    <span id="progressText">0 / 15</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div id="progressFill"></div>
+                </div>
+
+                <ul class="object-list" id="objectList">
+                    <li>Old Key</li>
+                    <li>Candle</li>
+                    <li>Grandfather Clock</li>
+                    <li>Antique Book</li>
+                    <li>Mirror</li>
+                    <li>Old Photograph</li>
+                    <li>Wine Bottle</li>
+                    <li>Silver Spoon</li>
+                    <li>Skull</li>
+                    <li>Lantern</li>
+                    <li>Scissors</li>
+                    <li>Vase</li>
+                    <li>Rusted Bell</li>
+                    <li>Diary</li>
+                    <li>Flashlight</li>
+                </ul>
+
+                <p class="panel-footer">
+                    Every object has a secret.
+                </p>
+
+            </aside>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

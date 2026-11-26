@@ -70,3 +70,6 @@ Game2/
 ├── best_score.txt             # created automatically after the first game
 └── assets/
     └── objects/               # optional custom PNG images
+
+    <img width="1277" height="852" alt="Screenshot 2026-11-26 155953" src="https://github.com/user-attachments/assets/300f92dc-2a46-4636-9110-1836f266d944" />
+
